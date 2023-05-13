@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -60,6 +60,26 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    ft="norg",
+    opts = {
+      load = {
+        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.dirman"] = {      -- Manages Neorg workspaces
+          config = {
+            workspaces = {
+              notes = "~/notes/neorg",
+            },
+          },
+        },
+      },
+    },
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+  },
 }
 
 return plugins
