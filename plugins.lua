@@ -64,7 +64,8 @@ local plugins = {
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
-    ft="norg",
+    lazy = false,
+    -- ft="norg",
     opts = {
       load = {
         ["core.defaults"] = {},  -- Loads default behaviour
@@ -74,6 +75,12 @@ local plugins = {
             workspaces = {
               notes = "~/notes/neorg",
             },
+            default_workspace = "notes",
+          },
+        },
+        ["core.esupports.metagen"] = {
+          config = {
+            type = "auto"
           },
         },
       },
