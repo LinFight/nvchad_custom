@@ -38,6 +38,10 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+  },
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -68,9 +72,9 @@ local plugins = {
     -- ft="norg",
     opts = {
       load = {
-        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.defaults"] = {}, -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = {      -- Manages Neorg workspaces
+        ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/notes/neorg",
@@ -80,12 +84,13 @@ local plugins = {
         },
         ["core.esupports.metagen"] = {
           config = {
-            type = "auto"
+            type = "auto",
           },
         },
+        ["core.integrations.telescope"] = {},
       },
     },
-    dependencies = { { "nvim-lua/plenary.nvim" } },
+    dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
   },
 }
 

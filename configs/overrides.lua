@@ -75,4 +75,12 @@ M.nvimtree = {
   },
 }
 
+M.telescope = {
+  defaults = {
+    mappings = {
+      n = { ["l"] = require("telescope.actions").select_default },
+    },
+  },
+}
+
 return M
