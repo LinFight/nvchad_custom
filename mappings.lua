@@ -9,6 +9,6 @@ M.general = {
 M.telescope = {
   n = {
     ["<leader>fk"] = { "<cmd> Telescope keymaps <CR>", "find keymaps" },
-  }  
+  },
 }
 return M
