@@ -66,31 +66,24 @@ local plugins = {
   -- }
 
   {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    lazy = false,
-    -- ft="norg",
-    opts = {
-      load = {
-        ["core.defaults"] = {}, -- Loads default behaviour
-        ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = { -- Manages Neorg workspaces
-          config = {
-            workspaces = {
-              notes = "~/notes/neorg",
-            },
-            default_workspace = "notes",
-          },
-        },
-        ["core.esupports.metagen"] = {
-          config = {
-            type = "auto",
-          },
-        },
-        ["core.integrations.telescope"] = {},
-      },
-    },
-    dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+
+  {
+    "jakewvincent/mkdnflow.nvim",
+    ft = "markdown",
+    config = function()
+      require("mkdnflow").setup({
+      mappings = {
+        MkdnNextLink = false,
+        MkdnPrevLink = false,
+      }
+    })
+    end,
   },
 }
 
