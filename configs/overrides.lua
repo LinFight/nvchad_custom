@@ -12,6 +12,8 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "bash",
+    "vim-doc",
   },
   indent = {
     enable = true,
@@ -37,6 +39,9 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- markdown
+    "marksman",
   },
 }
 
