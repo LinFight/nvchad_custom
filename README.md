@@ -1,14 +1,14 @@
-# nvchad_custom
+# Nvchad_custom
 
-# usage
+# Usage
 
-## clone repo
+## Clone Repo
 
 ```sh
 mv ~/.config/nvim/lua/custom ~/.config/nvim/lua/custom.bak
 ```
 
-## backup old config
+## Backup Old Config
 
 ```sh
 git clone git@github.com:LinFight/nvchad_custom.git ~/.config/nvim/lua/custom
