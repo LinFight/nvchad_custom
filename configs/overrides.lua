@@ -13,7 +13,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "bash",
-    "vim-doc",
+    "vimdoc",
   },
   indent = {
     enable = true,
